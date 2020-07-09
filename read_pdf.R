@@ -10,10 +10,9 @@ library(tidyverse)
 
 # Criando uma função split para remoção de \n ----
 
-split_n <-
-  function(caracter){
+split_n <-   function(caracter){
     split <- str_c(unlist(caracter %>%
-                            str_split("\n")), collapse = " ")
+                            str_split("[\r\n]")), collapse = " ")
   }
 
 # Leitura dos PDF's e criação e um corpus "sujo" ----
